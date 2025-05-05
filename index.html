@@ -15,10 +15,67 @@
         <li><a href="#questionnaire" class="hover:text-yellow-400 transition">Me contacter</a></li>
       </ul>
     </nav>
-    <main id="home" class="flex-grow flex items-center justify-center p-8">
+    <main id="home" class="flex-grow flex flex-col items-center justify-center p-8 space-y-8">
       <h1 class="text-4xl md:text-6xl font-bold text-center drop-shadow-lg">
         Bienvenue sur mon site <span class="text-yellow-400">TP DevWeb </span>!
       </h1>
+      <!-- Accordion DaisyUI -->
+      <div class="w-full max-w-md">
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+          <div class="collapse-title text-xl font-medium">
+            Compétences Web
+          </div>
+          <div class="collapse-content">
+            <p>HTML, CSS, JavaScript, TailwindCSS</p>
+          </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mt-2">
+          <div class="collapse-title text-xl font-medium">
+            Langages
+          </div>
+          <div class="collapse-content">
+            <p>Python, Java, C++</p>
+          </div>
+        </div>
+        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mt-2">
+          <div class="collapse-title text-xl font-medium">
+            Frameworks
+          </div>
+          <div class="collapse-content">
+            <p>React, Vue.js, Django</p>
+          </div>
+        </div>
+      </div>
+      <!-- Image avec mask-squircle -->
+      <div class="avatar">
+        <div class="w-32 mask mask-squircle">
+          <img src="https://placehold.co/150" alt="Placeholder Image" />
+        </div>
+      </div>
+      <!-- Carousel DaisyUI -->
+      <div class="carousel w-full max-w-lg">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="https://placehold.co/400x200" class="w-full" alt="Slide 1" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="https://placehold.co/400x200" class="w-full" alt="Slide 2" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="https://placehold.co/400x200" class="w-full" alt="Slide 3" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="p-4 bg-gray-900 bg-opacity-80 text-center text-sm">
       © <script>document.write(new Date().getFullYear());</script> <a href="mailto:eli.goldsztejn@epita.fr">Eli Goldsztejn</a> - EPITA. Tous droits réservés.
