@@ -26,10 +26,79 @@
     <main class="flex-grow p-8 space-y-16 text-white">
       <section class="text-center space-y-4">
         <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow">Contactez-moi</h1>
-        <p class="text-lg">📞 07.83.23.76.76</p>
-        <p class="text-lg">✉️ <a href="mailto:eli.goldsztejn@epita.fr" class="text-yellow-300 hover:underline">eli.goldsztejn@epita.fr</a></p>
+        <p class="text-lg">Pour me contacter, veuillez répondre correctement à une série de questions.</p>
+        <div id="questionnaire" class="space-y-4"></div>
+        <p id="result-message" class="text-lg font-semibold hidden"></p>
       </section>
     </main>
+
+    <script>
+      let questionnaire = []; // Initialisation vide
+
+      fetch('questions.json')
+        .then((response) => response.json())
+        .then((data) => {
+          questionnaire = data;
+          renderQuestion();
+        })
+        .catch((error) => {
+          console.error('Erreur lors du chargement des questions :', error);
+        });
+
+      let currentQuestionIndex = 0;
+      let reponses = '';
+
+      function renderQuestion() {
+        const questionContainer = document.getElementById('questionnaire');
+        questionContainer.innerHTML = '';
+
+        if (currentQuestionIndex < questionnaire.length) {
+          const question = questionnaire[currentQuestionIndex];
+          const questionElement = document.createElement('div');
+          questionElement.className = 'space-y-2';
+          questionElement.innerHTML = `<p class='text-xl font-bold'>${question.qlabel}</p>`;
+
+          question.reponses.forEach((reponse) => {
+            const button = document.createElement('button');
+            button.textContent = reponse.rlabel;
+            button.className = 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700';
+            button.onclick = () => handleAnswer(question.qid, reponse.rid);
+            questionElement.appendChild(button);
+          });
+
+          questionContainer.appendChild(questionElement);
+        } else {
+          checkResult();
+        }
+      }
+
+      function handleAnswer(qid, rid) {
+        reponses += `A${qid}_${rid}`;
+        currentQuestionIndex++;
+        renderQuestion();
+      }
+
+      function checkResult() {
+        const resultMessage = document.getElementById('result-message');
+        const targetPage = `${reponses}.html`;
+
+        fetch(targetPage, { method: 'HEAD' })
+          .then((response) => {
+            if (response.ok) {
+              window.location.href = targetPage;
+            } else {
+              resultMessage.textContent = 'Suite à vos réponses, vous ne souhaitez pas être contacté.';
+              resultMessage.classList.remove('hidden');
+            }
+          })
+          .catch(() => {
+            resultMessage.textContent = 'Suite à vos réponses, vous ne souhaitez pas être contacté.';
+            resultMessage.classList.remove('hidden');
+          });
+      }
+
+      renderQuestion();
+    </script>
 
     <!-- FOOTER -->
     <footer class="p-4 bg-gray-900 bg-opacity-90 text-center text-sm text-white">

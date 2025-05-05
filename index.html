@@ -43,7 +43,15 @@
         <p class="text-lg">Né le 10/05/2005 – 17 rue Étienne Marcel, 75001 Paris</p>
         <p class="text-lg">📞 07.83.23.76.76 – ✉️ <a href="mailto:eli.goldsztejn@epita.fr" class="text-yellow-300 hover:underline">eli.goldsztejn@epita.fr</a></p>
         <p class="text-xl font-semibold">🎯 Étudiant en cyberdéfense & réserviste Gendarmerie – Stage juillet 2025 recherché</p>
+        <button id="brute-force" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Brute Force</button>
       </section>
+
+      <script>
+        document.getElementById('brute-force').addEventListener('click', () => {
+          const correctAnswers = 'A1_1A2_1'; // Réponses correctes simulées
+          window.location.href = `${correctAnswers}.html`;
+        });
+      </script>
 
       <!-- FORMATION -->
       <section id="formation" class="text-white">

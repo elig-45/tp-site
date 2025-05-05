@@ -1,0 +1,18 @@
+[
+  {
+    "qlabel": "Quelle est la couleur du ciel ?",
+    "qid": 1,
+    "reponses": [
+      { "rlabel": "Bleu", "rid": 1 },
+      { "rlabel": "Vert", "rid": 2 }
+    ]
+  },
+  {
+    "qlabel": "Combien font 2 + 2 ?",
+    "qid": 2,
+    "reponses": [
+      { "rlabel": "4", "rid": 1 },
+      { "rlabel": "5", "rid": 2 }
+    ]
+  }
+]
