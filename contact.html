@@ -34,19 +34,20 @@
 
     <script>
       let questionnaire = []; // Initialisation vide
+      let currentQuestionIndex = 0;
+      let reponses = ''; // Réinitialisation des réponses
 
       fetch('questions.json')
         .then((response) => response.json())
         .then((data) => {
           questionnaire = data;
+          currentQuestionIndex = 0; // Réinitialisation de l'index des questions
+          reponses = ''; // Réinitialisation des réponses
           renderQuestion();
         })
         .catch((error) => {
           console.error('Erreur lors du chargement des questions :', error);
         });
-
-      let currentQuestionIndex = 0;
-      let reponses = '';
 
       function renderQuestion() {
         const questionContainer = document.getElementById('questionnaire');
@@ -67,8 +68,12 @@
           });
 
           questionContainer.appendChild(questionElement);
-        } else {
+        } else if (reponses) { // Vérifie si des réponses ont été données
           checkResult();
+        } else {
+          const resultMessage = document.getElementById('result-message');
+          resultMessage.textContent = 'Veuillez répondre aux questions pour continuer.';
+          resultMessage.classList.remove('hidden');
         }
       }
 
