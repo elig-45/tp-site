@@ -17,13 +17,26 @@
     </nav>
     <main id="home" class="flex-grow flex flex-col items-center justify-center p-8 space-y-8">
       <h1 class="text-4xl md:text-6xl font-bold text-center drop-shadow-lg">
-        Bienvenue sur mon site <span class="text-yellow-400">TP DevWeb </span>!
+        Bienvenue sur mon CV <span class="text-yellow-400">Eli Goldsztejn</span>!
       </h1>
-      <!-- Accordion DaisyUI -->
+      <!-- Photo de profil -->
+      <div class="avatar">
+        <div class="w-32 mask mask-squircle">
+          <img src="https://placehold.co/150" alt="Photo de profil" />
+        </div>
+      </div>
+      <!-- Informations personnelles -->
+      <div class="text-center space-y-4">
+        <p class="text-lg">Étudiant en informatique à <span class="font-bold">EPITA</span></p>
+        <p class="text-lg">Passionné par le développement web et les nouvelles technologies</p>
+        <p class="text-lg">Contact : <a href="mailto:eli.goldsztejn@epita.fr" class="text-yellow-400 hover:underline">eli.goldsztejn@epita.fr</a></p>
+      </div>
+      <!-- Compétences -->
       <div class="w-full max-w-md">
+        <h2 class="text-2xl font-bold text-center mb-4">Compétences</h2>
         <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
           <div class="collapse-title text-xl font-medium">
-            Compétences Web
+            Développement Web
           </div>
           <div class="collapse-content">
             <p>HTML, CSS, JavaScript, TailwindCSS</p>
@@ -31,7 +44,7 @@
         </div>
         <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mt-2">
           <div class="collapse-title text-xl font-medium">
-            Langages
+            Langages de Programmation
           </div>
           <div class="collapse-content">
             <p>Python, Java, C++</p>
@@ -46,35 +59,14 @@
           </div>
         </div>
       </div>
-      <!-- Image avec mask-squircle -->
-      <div class="avatar">
-        <div class="w-32 mask mask-squircle">
-          <img src="https://placehold.co/150" alt="Placeholder Image" />
-        </div>
-      </div>
-      <!-- Carousel DaisyUI -->
-      <div class="carousel w-full max-w-lg">
-        <div id="slide1" class="carousel-item relative w-full">
-          <img src="https://placehold.co/400x200" class="w-full" alt="Slide 1" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" class="btn btn-circle">❮</a>
-            <a href="#slide2" class="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide2" class="carousel-item relative w-full">
-          <img src="https://placehold.co/400x200" class="w-full" alt="Slide 2" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" class="btn btn-circle">❮</a>
-            <a href="#slide3" class="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide3" class="carousel-item relative w-full">
-          <img src="https://placehold.co/400x200" class="w-full" alt="Slide 3" />
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" class="btn btn-circle">❮</a>
-            <a href="#slide1" class="btn btn-circle">❯</a>
-          </div>
-        </div>
+      <!-- Expériences -->
+      <div class="w-full max-w-md">
+        <h2 class="text-2xl font-bold text-center mb-4">Expériences</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li><span class="font-bold">Stage Développeur Web</span> - Startup XYZ (2023)</li>
+          <li><span class="font-bold">Projet Étudiant</span> - Application de gestion de tâches (2022)</li>
+          <li><span class="font-bold">Hackathon</span> - 2ème place au Hackathon EPITA (2021)</li>
+        </ul>
       </div>
     </main>
     <footer class="p-4 bg-gray-900 bg-opacity-80 text-center text-sm">
