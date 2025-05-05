@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const calculator = document.getElementById('calculator');
-  const historyList = document.querySelector('#history ul');
+  const historyList = document.querySelector('#side-history ul');
 
   let currentInput = '';
   let history = [];
@@ -43,18 +43,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  function isValidExpression(expression) {
+    const validPattern = /^[0-9+\-*/.() ]+$/;
+    return validPattern.test(expression);
+  }
+
   function handleInput(input) {
     if (input === 'C') {
       currentInput = '';
       screen.textContent = '0';
     } else if (input === '=') {
-      try {
-        const result = eval(currentInput);
-        history.push(`${currentInput} = ${result}`);
-        updateHistory();
-        currentInput = result.toString();
-        screen.textContent = result;
-      } catch {
+      if (isValidExpression(currentInput)) {
+        try {
+          console.log('Expression évaluée :', currentInput);
+          const result = eval(currentInput);
+          if (result !== undefined) {
+            history.push(`${currentInput} = ${result}`);
+            updateHistory();
+            currentInput = result.toString();
+            screen.textContent = result;
+          } else {
+            screen.textContent = 'Erreur';
+          }
+        } catch (error) {
+          console.error('Erreur lors de l\'évaluation :', error);
+          screen.textContent = 'Erreur';
+        }
+      } else {
         screen.textContent = 'Erreur';
       }
     } else {
