@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculatrice</title>
+    <title>Contact</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.35/dist/full.css" rel="stylesheet" type="text/css" />
     <style>
@@ -23,33 +23,17 @@
     </nav>
 
     <!-- CONTENU PRINCIPAL -->
-    <main class="flex-grow p-2 space-y-4 text-white">
+    <main class="flex-grow p-8 space-y-16 text-white">
       <section class="text-center space-y-4">
-        <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow">Calculatrice</h1>
-        <div class="flex justify-center items-start space-x-4">
-          <div id="calculator" class="w-full max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col">
-            <!-- Clavier visuel et écran de la calculatrice seront ajoutés ici -->
-          </div>
-        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow">Contactez-moi</h1>
+        <p class="text-lg">📞 07.83.23.76.76</p>
+        <p class="text-lg">✉️ <a href="mailto:eli.goldsztejn@epita.fr" class="text-yellow-300 hover:underline">eli.goldsztejn@epita.fr</a></p>
       </section>
     </main>
-
-    <!-- HISTORIQUE FIXE -->
-    <div id="side-history" class="fixed top-1/4 right-4 w-64 bg-gray-700 p-4 rounded-lg shadow-lg">
-      <h2 class="text-xl font-bold">Historique</h2>
-      <ul class="list-disc list-inside"></ul>
-    </div>
 
     <!-- FOOTER -->
     <footer class="p-4 bg-gray-900 bg-opacity-90 text-center text-sm text-white">
       © <script>document.write(new Date().getFullYear());</script> <a href="mailto:eli.goldsztejn@epita.fr" class="text-yellow-300 hover:underline">Eli Goldsztejn</a> – EPITA
     </footer>
-    <script src="src/calculator.js"></script>
-    <script>
-      function toggleHistory() {
-        const historyContent = document.getElementById('history-content');
-        historyContent.classList.toggle('hidden');
-      }
-    </script>
   </body>
 </html>
