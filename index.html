@@ -2,12 +2,20 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Mon Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.35/dist/full.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <nav class="p-4 bg-gray-800 text-white">
+      <ul class="flex space-x-4">
+        <li><a href="#home" class="hover:underline">Accueil</a></li>
+        <li><a href="#calculatrice" class="hover:underline">Calculatrice</a></li>
+        <li><a href="#questionnaire" class="hover:underline">Me contacter</a></li>
+      </ul>
+    </nav>
+    <main id="home" class="p-4"></main>
+    <footer class="p-4 bg-gray-800 text-white text-center"></footer>
   </body>
 </html>
