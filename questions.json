@@ -1,0 +1,37 @@
+[
+  {
+    "question": "Quelle est la date de naissance d'Eli Goldsztejn ?",
+    "options": ["10/05/2005", "15/08/2004", "20/07/2006", "01/01/2005"],
+    "answer": "10/05/2005"
+  },
+  {
+    "question": "Dans quelle école Eli poursuit-il son Bachelor en CyberDéfense ?",
+    "options": ["EPITA", "ENS", "Polytechnique", "HEC"],
+    "answer": "EPITA"
+  },
+  {
+    "question": "Quel est le niveau d'anglais d'Eli ?",
+    "options": ["Débutant", "Intermédiaire", "Avancé", "Bilingue natif"],
+    "answer": "Bilingue natif"
+  },
+  {
+    "question": "Quel stage Eli a-t-il effectué en 2019 ?",
+    "options": ["Stage chez Microsoft France", "Stage chez Google", "Stage chez Valeurs Actuelles", "Stage chez L’Incorrect"],
+    "answer": "Stage chez Microsoft France"
+  },
+  {
+    "question": "Quelle récompense Eli a-t-il obtenue en 2019 ?",
+    "options": [
+      "6e place France – Concours YAFF",
+      "2e place Académie de Paris – Concours C.Génial",
+      "1ère place Concours National de Mathématiques",
+      "Prix d'excellence en programmation"
+    ],
+    "answer": "2e place Académie de Paris – Concours C.Génial"
+  },
+  {
+    "question": "Quel est l'un des centres d'intérêt d'Eli ?",
+    "options": ["Football", "Ski", "Peinture", "Cuisine"],
+    "answer": "Ski"
+  }
+]
