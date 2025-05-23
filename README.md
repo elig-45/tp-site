@@ -26,6 +26,7 @@ Le projet a été créé en utilisant les technologies suivantes :
 - **Interface utilisateur moderne** : Design responsive et esthétique.
 - **Navigation intuitive** : Menu clair et facile à utiliser.
 - **Composants dynamiques** : Utilisation de JavaScript pour des interactions utilisateur.
+- **Brute Force** : Un bouton permet de tester toutes les combinaisons de réponses pour accéder à la page de contact.
 
 ## Installation
 

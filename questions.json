@@ -33,5 +33,15 @@
     "question": "Quel est l'un des centres d'intérêt d'Eli ?",
     "options": ["Football", "Ski", "Peinture", "Cuisine"],
     "answer": "Ski"
+  },
+  {
+    "question": "Quelle est la couleur du ciel ?",
+    "options": ["Bleu", "Vert"],
+    "answer": "Bleu"
+  },
+  {
+    "question": "Combien font 2 + 2 ?",
+    "options": ["3", "4"],
+    "answer": "4"
   }
 ]
