@@ -76,18 +76,23 @@
         if (currentQuestionIndex < questionnaire.length) {
           const question = questionnaire[currentQuestionIndex];
           const questionElement = document.createElement('div');
-          questionElement.className = 'space-y-4';
+          questionElement.className = 'space-y-4 text-center'; // Centrer le texte et les réponses
           questionElement.innerHTML = `<p class='text-xl font-bold'>${question.qlabel}</p>`;
 
           // Vérification que question.reponses est un tableau
           if (Array.isArray(question.reponses)) {
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.className = 'flex flex-wrap justify-center gap-4'; // Centrer les boutons
+
             question.reponses.forEach((reponse) => {
               const button = document.createElement('button');
               button.textContent = reponse.rlabel;
               button.className = 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700';
               button.onclick = () => handleAnswer(question.qid, reponse.rid);
-              questionElement.appendChild(button);
+              buttonsContainer.appendChild(button);
             });
+
+            questionElement.appendChild(buttonsContainer);
           } else {
             questionElement.innerHTML += `<p class="text-red-500">Aucune réponse disponible pour cette question.</p>`;
           }
