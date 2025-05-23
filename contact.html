@@ -62,6 +62,7 @@
           currentQuestionIndex = 0;
           reponses = '';
           renderQuestion();
+          checkQuizCompletion(); // Vérifier l'état du quiz après le rendu
         })
         .catch((error) => {
           console.error('Erreur lors du chargement des questions :', error);
@@ -128,6 +129,31 @@
           })
           .catch(() => {
             resultMessage.textContent = 'Suite à vos réponses, vous ne souhaitez pas être contacté.';
+            resultMessage.classList.remove('hidden');
+          });
+      }
+
+      // Masquer le formulaire de contact par défaut
+      const contactForm = document.querySelector('form');
+      contactForm.style.display = 'none';
+
+      // Vérifier si le quiz a été répondu correctement
+      function checkQuizCompletion() {
+        const resultMessage = document.getElementById('result-message');
+        const targetPage = `${reponses}.html`;
+
+        fetch(targetPage, { method: 'HEAD' })
+          .then((response) => {
+            if (response.ok) {
+              // Afficher le formulaire si le quiz est correct
+              contactForm.style.display = 'block';
+            } else {
+              resultMessage.textContent = 'Veuillez répondre correctement au quiz pour accéder au formulaire de contact.';
+              resultMessage.classList.remove('hidden');
+            }
+          })
+          .catch(() => {
+            resultMessage.textContent = 'Erreur lors de la vérification du quiz. Veuillez réessayer.';
             resultMessage.classList.remove('hidden');
           });
       }
