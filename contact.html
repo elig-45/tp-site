@@ -32,7 +32,11 @@
           <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
       </section>
-      <section id="questionnaire" class="space-y-4"></section>
+      <section id="questionnaire" class="space-y-4 flex justify-center items-center">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-2xl">
+          <!-- Le contenu du questionnaire sera injecté ici -->
+        </div>
+      </section>
       <p id="result-message" class="text-lg font-semibold hidden"></p>
     </main>
 
@@ -66,13 +70,13 @@
         });
 
       function renderQuestion() {
-        const questionContainer = document.getElementById('questionnaire');
+        const questionContainer = document.getElementById('questionnaire').querySelector('div');
         questionContainer.innerHTML = '';
 
         if (currentQuestionIndex < questionnaire.length) {
           const question = questionnaire[currentQuestionIndex];
           const questionElement = document.createElement('div');
-          questionElement.className = 'space-y-2';
+          questionElement.className = 'space-y-4';
           questionElement.innerHTML = `<p class='text-xl font-bold'>${question.qlabel}</p>`;
 
           // Vérification que question.reponses est un tableau
