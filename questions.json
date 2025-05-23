@@ -1,47 +1,56 @@
 [
   {
-    "question": "Quelle est la date de naissance d'Eli Goldsztejn ?",
-    "options": ["10/05/2005", "15/08/2004", "20/07/2006", "01/01/2005"],
-    "answer": "10/05/2005"
+    "qlabel": "Quelle est la date de naissance d'Eli Goldsztejn ?",
+    "reponses": [
+      { "rlabel": "10/05/2005", "rid": 1 },
+      { "rlabel": "15/08/2004", "rid": 2 },
+      { "rlabel": "20/07/2006", "rid": 3 },
+      { "rlabel": "01/01/2005", "rid": 4 }
+    ]
   },
   {
-    "question": "Dans quelle école Eli poursuit-il son Bachelor en CyberDéfense ?",
-    "options": ["EPITA", "ENS", "Polytechnique", "HEC"],
-    "answer": "EPITA"
+    "qlabel": "Dans quelle école Eli poursuit-il son Bachelor en CyberDéfense ?",
+    "reponses": [
+      { "rlabel": "EPITA", "rid": 1 },
+      { "rlabel": "ENS", "rid": 2 },
+      { "rlabel": "Polytechnique", "rid": 3 },
+      { "rlabel": "HEC", "rid": 4 }
+    ]
   },
   {
-    "question": "Quel est le niveau d'anglais d'Eli ?",
-    "options": ["Débutant", "Intermédiaire", "Avancé", "Bilingue natif"],
-    "answer": "Bilingue natif"
+    "qlabel": "Quel est le niveau d'anglais d'Eli ?",
+    "reponses": [
+      { "rlabel": "Débutant", "rid": 1 },
+      { "rlabel": "Intermédiaire", "rid": 2 },
+      { "rlabel": "Avancé", "rid": 3 },
+      { "rlabel": "Bilingue natif", "rid": 4 }
+    ]
   },
   {
-    "question": "Quel stage Eli a-t-il effectué en 2019 ?",
-    "options": ["Stage chez Microsoft France", "Stage chez Google", "Stage chez Valeurs Actuelles", "Stage chez L’Incorrect"],
-    "answer": "Stage chez Microsoft France"
+    "qlabel": "Quel stage Eli a-t-il effectué en 2019 ?",
+    "reponses": [
+      { "rlabel": "Stage chez Microsoft France", "rid": 1 },
+      { "rlabel": "Stage chez Google", "rid": 2 },
+      { "rlabel": "Stage chez Valeurs Actuelles", "rid": 3 },
+      { "rlabel": "Stage chez L’Incorrect", "rid": 4 }
+    ]
   },
   {
-    "question": "Quelle récompense Eli a-t-il obtenue en 2019 ?",
-    "options": [
-      "6e place France – Concours YAFF",
-      "2e place Académie de Paris – Concours C.Génial",
-      "1ère place Concours National de Mathématiques",
-      "Prix d'excellence en programmation"
-    ],
-    "answer": "2e place Académie de Paris – Concours C.Génial"
+    "qlabel": "Quelle récompense Eli a-t-il obtenue en 2019 ?",
+    "reponses": [
+      { "rlabel": "6e place France – Concours YAFF", "rid": 1 },
+      { "rlabel": "2e place Académie de Paris – Concours C.Génial", "rid": 2 },
+      { "rlabel": "1ère place Concours National de Mathématiques", "rid": 3 },
+      { "rlabel": "Prix d'excellence en programmation", "rid": 4 }
+    ]
   },
   {
-    "question": "Quel est l'un des centres d'intérêt d'Eli ?",
-    "options": ["Football", "Ski", "Peinture", "Cuisine"],
-    "answer": "Ski"
-  },
-  {
-    "question": "Quelle est la couleur du ciel ?",
-    "options": ["Bleu", "Vert"],
-    "answer": "Bleu"
-  },
-  {
-    "question": "Combien font 2 + 2 ?",
-    "options": ["3", "4"],
-    "answer": "4"
+    "qlabel": "Quel est l'un des centres d'intérêt d'Eli ?",
+    "reponses": [
+      { "rlabel": "Football", "rid": 1 },
+      { "rlabel": "Ski", "rid": 2 },
+      { "rlabel": "Peinture", "rid": 3 },
+      { "rlabel": "Cuisine", "rid": 4 }
+    ]
   }
 ]
