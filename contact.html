@@ -22,9 +22,15 @@
       </ul>
     </nav>
 
+
+      <br>
+      <p class="text-center text-lg font-semibold mt-4">
+        Pour accéder au formulaire de contact, merci de répondre correctement aux questions ci-dessous.
+      </p>
+
     <!-- CONTENU PRINCIPAL -->
     <main class="flex-grow p-8 space-y-16 text-white">
-      <section class="text-center space-y-4">
+      <section class="text-center space-y-4" id="contact-form" style="display: none;">
         <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow">Contactez-moi</h1>
         <form action="mailto:eli.goldsztejn@epita.fr" method="GET" class="space-y-4">
           <input type="text" name="subject" placeholder="Sujet" class="input input-bordered w-full text-black" required />
@@ -32,12 +38,13 @@
           <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
       </section>
+
       <section id="questionnaire" class="space-y-4 flex justify-center items-center">
         <div class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-2xl">
           <!-- Le contenu du questionnaire sera injecté ici -->
         </div>
       </section>
-      <p id="result-message" class="text-lg font-semibold hidden"></p>
+      <p id="result-message" class="text-lg font-semibold hidden text-center"></p>
     </main>
 
     <!-- FOOTER -->
@@ -67,22 +74,36 @@
       }
 
       window.handleAnswer = function(qid, rid) {
-        reponses += `A${qid}_${rid}`;
+        const question = questionnaire.find(q => q.qid === qid);
+        const answer = question.reponses.find(r => r.rid === rid);
+
+        if (answer.correct) {
+          reponses += `A${qid}_${rid}`;
+        } else {
+          reponses += `A${qid}_incorrect`;
+        }
+
         currentQuestionIndex++;
         renderQuestion();
       }
 
       function checkResult() {
-        const targetPage = `${reponses}.html`;
-        fetch(targetPage)
-          .then(response => {
-            if (response.ok) {
-              window.location.href = targetPage;
-            } else {
-              document.getElementById('result-message').textContent = "Suite à vos réponses, vous ne souhaitez pas être contacté.";
-              document.getElementById('result-message').classList.remove('hidden');
-            }
-          });
+        const allCorrect = questionnaire.every(q => {
+          const response = reponses.includes(`A${q.qid}_`);
+          const correctResponse = q.reponses.find(r => r.correct);
+          return response && reponses.includes(`A${q.qid}_${correctResponse.rid}`);
+        });
+
+        if (allCorrect) {
+          document.getElementById('contact-form').style.display = 'block';
+          document.getElementById('questionnaire').style.display = 'none';
+          document.getElementById('result-message').classList.add('hidden');
+        } else {
+          document.getElementById('contact-form').style.display = 'none';
+          document.getElementById('questionnaire').style.display = 'block';
+          document.getElementById('result-message').textContent = "Suite à vos réponses, vous ne pouvez pas me contacter.";
+          document.getElementById('result-message').classList.remove('hidden');
+        }
       }
 
       renderQuestion();
