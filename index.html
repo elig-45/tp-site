@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELI GOLDSZTEJN - CV Interactif</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./src/main.js" defer></script> <!-- Ajout de l'attribut defer -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.35/dist/full.css" rel="stylesheet" type="text/css" />
     <style>
       html {
@@ -119,23 +120,25 @@
         </div>
       </section>
 
-      <!-- BRUTE FORCE BUTTON -->
-      <section class="text-center mt-8">
-        <button id="brute-force" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">
+      <!-- BOUTON BRUTE FORCE -->
+      <section class="text-center">
+        <button id="brute-force" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
           Brute Force
         </button>
       </section>
-      <script>
-        document.getElementById('brute-force').addEventListener('click', () => {
-          let bruteForceResponses = 'A1_1A2_2'; // Exemple de combinaison brute force
-          window.location.href = `${bruteForceResponses}.html`;
-        });
-      </script>
     </main>
 
     <!-- FOOTER -->
     <footer class="p-4 bg-gray-900 bg-opacity-90 text-center text-sm text-white">
       © <script>document.write(new Date().getFullYear());</script> <a href="mailto:eli.goldsztejn@epita.fr" class="text-yellow-300 hover:underline">Eli Goldsztejn</a> – EPITA
     </footer>
+
+    <script>
+      document.getElementById('brute-force').addEventListener('click', () => {
+        const bruteForceResponses = 'A1_1A2_2'; // Exemple de combinaison brute force
+        const targetPage = `contact.html?responses=${bruteForceResponses}`;
+        window.location.href = targetPage; // Redirige vers la page "Contact" avec les réponses
+      });
+    </script>
   </body>
 </html>
