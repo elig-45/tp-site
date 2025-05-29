@@ -87,7 +87,17 @@
         renderQuestion();
       }
 
+      function getQueryParams() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('responses');
+      }
+
       function checkResult() {
+        const responsesFromUrl = getQueryParams();
+        if (responsesFromUrl) {
+          reponses = responsesFromUrl;
+        }
+
         const allCorrect = questionnaire.every(q => {
           const response = reponses.includes(`A${q.qid}_`);
           const correctResponse = q.reponses.find(r => r.correct);
@@ -101,12 +111,13 @@
         } else {
           document.getElementById('contact-form').style.display = 'none';
           document.getElementById('questionnaire').style.display = 'block';
-          document.getElementById('result-message').textContent = "Suite à vos réponses, vous ne pouvez pas me contacter.";
+          document.getElementById('result-message').textContent = "Suite à vos réponses, vous ne souhaitez pas être contacté.";
           document.getElementById('result-message').classList.remove('hidden');
         }
       }
 
       renderQuestion();
+      checkResult();
     </script>
   </body>
 </html>
