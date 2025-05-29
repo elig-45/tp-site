@@ -39,12 +39,14 @@
         </form>
       </section>
 
-      <section id="questionnaire" class="space-y-4 flex justify-center items-center">
-        <div class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-2xl">
+      <center>
+      <section id="questionnaire" class="space-y-4 flex justify-center items-center h-full">
+        <div class="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-2xl text-center">
           <!-- Le contenu du questionnaire sera injecté ici -->
         </div>
       </section>
       <p id="result-message" class="text-lg font-semibold hidden text-center"></p>
+      </center>
     </main>
 
     <!-- FOOTER -->
@@ -115,6 +117,9 @@
             document.getElementById('result-message').classList.remove('hidden');
           }
         } else {
+          const questionContainer = document.getElementById('questionnaire');
+          questionContainer.style.display = 'block';
+          document.getElementById('result-message').classList.add('hidden');
           renderQuestion();
         }
       }

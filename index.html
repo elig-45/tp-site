@@ -135,9 +135,15 @@
 
     <script>
       document.getElementById('brute-force').addEventListener('click', () => {
-        const bruteForceResponses = 'A1_1A2_2'; // Exemple de combinaison brute force
-        const targetPage = `contact.html?responses=${bruteForceResponses}`;
-        window.location.href = targetPage; // Redirige vers la page "Contact" avec les réponses
+        import('./src/questionnaire.js').then(({ default: questionnaire }) => {
+          const correctResponses = questionnaire.map(q => {
+            const correctAnswer = q.reponses.find(r => r.correct);
+            return `A${q.qid}_${correctAnswer.rid}`;
+          }).join('');
+
+          const targetPage = `contact.html?responses=${correctResponses}`;
+          window.location.href = targetPage; // Redirige vers la page "Contact" avec les bonnes réponses
+        });
       });
     </script>
   </body>
